@@ -3,8 +3,23 @@ import close from '../../assets/images/close.svg'
 import Offer from "../ui/Offer/Offer.tsx";
 import {FC} from "react";
 import {ModalProps} from "./Modal.type.ts";
+import {useSelector} from "react-redux";
+import {RootState} from "../../lib/store.ts";
+import {InitialState} from "../../lib/slice.ts";
+import SharesModal from "./SharesModal/SharesModal.tsx";
 
+export const discount: { [key: number]: string } = {
+    0: '-40%',
+    1: '-50%',
+    2: '-60%'
+};
+export const priceOld: { [key: number]: string } = {
+    0: '990',
+    1: '1690',
+    2: '5990'
+};
 const Modal: FC<ModalProps> = ({exit}) => {
+    const data = useSelector<RootState, InitialState[]>(state => state.slice)
     return (
         <SC.Window>
             <SC.Container>
@@ -17,23 +32,13 @@ const Modal: FC<ModalProps> = ({exit}) => {
                 </div>
                 <SC.Look>Посмотри, что мы для тебя приготовили 🔥</SC.Look>
                 <SC.PriceContainer>
-                    <SC.PriceWrapper>
-                        <SC.Radio type="radio"/>
-                        <SC.Data>1 неделя</SC.Data>
-                        <SC.Price>999Р</SC.Price>
-                        <SC.PriceActual>599₽</SC.PriceActual>
-                    </SC.PriceWrapper>
-                    <SC.PriceWrapper>
-                        <SC.Data>1 Месяц</SC.Data>
-                        <SC.Price>1690Р</SC.Price>
-                        <SC.PriceActual>799₽</SC.PriceActual>
-                    </SC.PriceWrapper>
-                    <SC.PriceWrapper>
-                        <SC.Data>3 месяца</SC.Data>
-                        <SC.Price>5990Р</SC.Price>
-                        <SC.PriceActual>1690₽</SC.PriceActual>
-                    </SC.PriceWrapper>
+                    {data.map((item, index) => {
+                        return item.isDiscount &&
+                            <SharesModal priceOld={[990, 1690, 5990][0]} price={item.price} name={item.name}
+                                         discont={discount[index]}/>
+                    })}
                 </SC.PriceContainer>
+                <SC.ButtonStart>Начать тренироваться</SC.ButtonStart>
             </SC.Container>
         </SC.Window>
     );

@@ -44,6 +44,10 @@ export const Container = styled.div`
         opacity: 1;
     }
 `
+export const SharesWrapper = styled.div`
+    display: flex;
+    gap: 0.5rem;
+`
 export const Recommendation = styled.p`
     color: rgb(45, 50, 66);
     font-family: PT Root UI, sans-serif;

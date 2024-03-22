@@ -8,6 +8,7 @@ export const Window = styled.div`
     right: 0;
     left: 0;
     bottom: 0;
+    z-index: 999999;
 `
 export const Container = styled.div`
     background: rgb(245, 247, 247);
@@ -55,36 +56,6 @@ export const PriceContainer = styled.div`
     width: 100%;
     gap: 20px;
 `
-export const PriceWrapper = styled.div`
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    border: 1px solid rgb(231, 234, 241);
-    border-radius: 1.25rem;
-    background: rgb(255, 255, 255);
-    padding: 1.63rem 1.38rem 1.25rem 1.63rem;
-    width: 100%;
-`
-export const Radio = styled.input`
-    padding: 3px;
-    background-color: yellow;
-`
-export const Data = styled.span`
-    ${font({Fmax:26, Fmin: 24, lineHeight: 1.0,weight: 400, family: 'Bebas Neue Cyrillic, sans-serif'})};
-    letter-spacing: 0;
-    text-align: left;
-`
-export const Price = styled.span`
-    ${font({Fmax: 20, Fmin: 20, lineHeight: 1.1})};
-    letter-spacing: 0;
-    text-align: left;
-`
-export const PriceActual = styled.span`
-    ${font({Fmax:46, Fmin: 44, lineHeight: 1.1})}
-    letter-spacing: 0;
-    text-align: left;
-`
 export const Close = styled.img`
     width: 1.5rem;
     height: 1.5rem;
@@ -92,4 +63,18 @@ export const Close = styled.img`
     right: 20px;
     top: 20px;
     cursor: pointer;
+`
+export const ButtonStart = styled.button`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 30px;
+    border: none;
+    cursor: pointer;
+    padding: 20px 0 22px 0;
+    background: rgb(253, 77, 53);
+    ${font({Fmax: 20, color: 'rgb(255, 255, 255)', weight: 500, Fmin: 20 ,family: 'Rubik, sans-serif'})};
+    letter-spacing: 0px;
+    text-align: left;
+    width: 100%;
 `
