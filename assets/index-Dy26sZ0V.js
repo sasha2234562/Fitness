@@ -219,7 +219,7 @@ font-size: calc( (100vw - 360px)/(1440 - 360) * (${i} - ${o}) + ${o}px);
     max-width: 27.13rem;
     max-height: 44.69rem;
     height: auto;
-`,bw="/Achieving-success/assets/men-CzgSjVve.svg",Zw=()=>T.jsx(Jw,{src:bw,alt:"men"}),eS=A.div`
+`,bw="/Fitness/assets/men-CzgSjVve.svg",Zw=()=>T.jsx(Jw,{src:bw,alt:"men"}),eS=A.div`
     //width: 50%;
 
     .checkbox {
