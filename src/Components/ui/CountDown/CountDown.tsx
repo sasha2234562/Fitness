@@ -1,5 +1,5 @@
 import {FC, useEffect, useState} from "react";
-import * as SC from './CountDown.style.ts'
+import * as SC from './CountDown.style'
 
 export interface CountDownProps {
     minutes: number

@@ -1,5 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit";
-import {api} from "../api.ts";
+import {api} from "@/api";
 
 export const get = createAsyncThunk(
     'get data',
@@ -36,7 +36,7 @@ const slice = createSlice({
     reducers: {},
     extraReducers: builder => {
         builder.addCase(get.fulfilled, (_, action: PayloadAction<InitialState[]>) => {
-            return action.payload; // Обновление состояния
+            return action.payload;
         });
     }
 });

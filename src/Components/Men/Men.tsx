@@ -1,4 +1,4 @@
-import  * as SC from './Men.style.ts'
+import  * as SC from './Men.style'
 import men from '../../assets/images/men.svg'
 
 const Men = () => {

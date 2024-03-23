@@ -4,15 +4,19 @@ import {font} from "../../../common.ts";
 export const Container = styled.div`
     display: flex;
     align-items: center;
-    width: 31.38rem;
-    height: 5.47rem;
+    //width: 100%;
+    min-height: 5.47rem;
     border: 0.13rem solid rgb(211, 214, 221);
     border-radius: 1.25rem;
     background: rgb(255, 255, 255);
-    padding: 23px 31px 14px 52px ;
+    padding: 23px 31px 14px 52px;
     gap: 42px;
-    margin: 40px 0 12px 0 ;
+    margin: 40px 0 12px 0;
     position: relative;
+    @media (max-width: 1200px) {
+        margin: 6px 0 12px 0 ;
+        flex-wrap: wrap;
+    }
 `
 export const Star = styled.img`
     position: absolute;

@@ -1,7 +1,7 @@
-import * as SC from './Shares.style.ts'
+import * as SC from './Shares.style'
 import star from '../../../assets/images/star.svg'
 import {FC} from "react";
-import {SharesProps} from './Shares.type.ts';
+import {SharesProps} from './Shares.type';
 
 const Shares: FC<SharesProps> = ({price, discount, name}) => {
     return (

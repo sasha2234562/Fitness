@@ -7,8 +7,8 @@ export const Container = styled.div`
     border: 2px solid rgb(211, 214, 221);
     border-radius: 20px;
     background: rgb(255, 255, 255);
-    width: 130px;
-    height: 261px;
+    width: 100%;
+    max-height: 261px;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -1,12 +1,6 @@
-import * as SC from './SharesModal.style.ts'
+import * as SC from './SharesModal.style'
 import {FC} from "react";
-
-export interface SharesModalProps {
-    name: string
-    discont: string
-    price: number
-    priceOld: number
-}
+import {SharesModalProps} from "@/Components/Modal/SharesModal/SharesModal.type";
 
 const SharesModal: FC<SharesModalProps> = ({price, priceOld,  name}) => {
     console.log(priceOld)

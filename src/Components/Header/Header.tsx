@@ -1,12 +1,12 @@
-import * as SC from './Header.style.ts'
-import CountDown from "../ui/CountDown/CountDown.tsx";
-import Modal from "../Modal/Modal.tsx";
+import * as SC from './Header.style';
 import {useState} from "react";
+import CountDown from "@/Components/ui/CountDown/CountDown";
+import Modal from "@/Components/Modal/Modal";
 
 const Header = () => {
     const [open, setOpen] = useState(false)
     const exit = () => setOpen(false)
-    const openWindow = () => setOpen(true)
+    const openWindow = () => setOpen(false)
 
     return (
         <SC.Header>

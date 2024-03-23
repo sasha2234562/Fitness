@@ -2,7 +2,7 @@ import styled from "styled-components";
 import {font} from "../../common.ts";
 
 export const Container = styled.div`
-    width: 50%;
+    //width: 50%;
 
     .checkbox {
         position: absolute;
@@ -46,7 +46,15 @@ export const Container = styled.div`
 `
 export const SharesWrapper = styled.div`
     display: flex;
+    flex-wrap: unset;
     gap: 0.5rem;
+    @media (max-width: 1200px) {
+        flex-wrap: wrap;
+        gap: 6px;
+    }
+    @media (max-width: 800px) {
+        margin: 0 20px;
+    }
 `
 export const Recommendation = styled.p`
     color: rgb(45, 50, 66);

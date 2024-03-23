@@ -1,12 +1,12 @@
-import * as SC from './Modal.style.ts'
-import close from '../../assets/images/close.svg'
-import Offer from "../ui/Offer/Offer.tsx";
+import * as SC from './Modal.style';
 import {FC} from "react";
-import {ModalProps} from "./Modal.type.ts";
+import {RootState} from "@/lib/store";
+import {InitialState} from "@/lib/slice";
 import {useSelector} from "react-redux";
-import {RootState} from "../../lib/store.ts";
-import {InitialState} from "../../lib/slice.ts";
-import SharesModal from "./SharesModal/SharesModal.tsx";
+import {ModalProps} from "@/Components/Modal/Modal.type";
+import close from '../../assets/images/close.svg';
+import SharesModal from "@/Components/Modal/SharesModal/SharesModal";
+import OfferPromotion from "@/Components/ui/OfferPromotion/OfferPromotion";
 
 export const discount: { [key: number]: string } = {
     0: '-40%',
@@ -24,7 +24,7 @@ const Modal: FC<ModalProps> = ({exit}) => {
         <SC.Window>
             <SC.Container>
                 <SC.Close src={close} alt="close" onClick={exit}/>
-                <Offer/>
+                <OfferPromotion/>
                 <SC.Title>Не упусти свой <span>последний шанс</span></SC.Title>
                 <div>
                     <SC.WeKnow>Мы знаем, как трудно начать.. <span>Поэтому!</span></SC.WeKnow>
