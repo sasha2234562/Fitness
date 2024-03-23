@@ -2,9 +2,9 @@ import * as SC from './Content.style'
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "@/lib/store";
-import {get, InitialState} from '@/lib/slice';
-import Shares from "@/Components/ui/Shares/Shares";
+import {get, Interface} from '@/lib/slice';
 import Forever from "@/Components/ui/Forever/Forever";
+import Shares from "@/Components/ui/Shares/Shares";
 
 export const discount: { [key: number]: string } = {
     0: '-30%',
@@ -12,7 +12,8 @@ export const discount: { [key: number]: string } = {
     2: '-50%'
 };
 const Content = () => {
-    const data = useSelector<RootState, InitialState[]>(state => state.slice);
+    const data = useSelector<RootState, Interface[]>(state => state.slice.isContent);
+    const discountPrice = useSelector<RootState, Interface[]>(state => state.slice.isPopupContent);
     const dispatch = useDispatch<AppDispatch>();
 
     useEffect(() => {
@@ -22,8 +23,9 @@ const Content = () => {
         <SC.Container>
             <SC.SharesWrapper>
                 {data.map((i, index) => {
+                    console.log(i)
                     return i.isPopular && i.name !== 'навсегда' &&
-                        <Shares price={i.price} name={i.name} discount={discount[index]}/>
+                        <Shares price={i.price} name={i.name} discountPrice={discountPrice[index].price} discount={discount[index]}/>
                 })}
             </SC.SharesWrapper>
             <Forever/>

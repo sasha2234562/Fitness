@@ -2,8 +2,6 @@ import styled from "styled-components";
 import {font} from "@/common";
 
 export const Container = styled.div`
-    //width: 50%;
-
     .checkbox {
         position: absolute;
         -webkit-appearance: none;
@@ -51,6 +49,7 @@ export const SharesWrapper = styled.div`
     @media (max-width: 1200px) {
         flex-wrap: wrap;
         gap: 6px;
+        margin-right: 60px;
     }
     @media (max-width: 800px) {
         margin: 0 20px;
@@ -64,19 +63,22 @@ export const Recommendation = styled.p`
     line-height: 130%;
     letter-spacing: 0;
     text-align: left;
+    @media (max-width: 500px) {
+        margin: 0 20px 1rem;
+    }
 `
 export const CheckboxContainer = styled.div`
     display: flex;
     gap: 0.75rem;
     margin: 25px 0 50px 0;
     align-items: center;
-    border-radius: 4.8px;
+    border-radius: 5px;
+    @media (max-width: 500px) {
+        margin: 0 20px;
+    }
 `
 export const CheckboxLabel  =styled.p`
-    font-family: PT Root UI, sans-serif;
-    font-size: 1rem;
-    font-weight: 400;
-    line-height: 110%;
+    ${font({Fmax: 16, Fmin:16, weight: 400, lineHeight: 1.1})}
     letter-spacing: 0;
     text-align: left;
     span{
@@ -84,29 +86,29 @@ export const CheckboxLabel  =styled.p`
     }
 `
 export const BuyButton = styled.button`
-    padding: 1.75rem 6.25rem;
+    padding: 1.75rem 0;
     border: none;
     border-radius: 3.75rem;
     background: rgb(253, 77, 53);
-    color: rgb(255, 255, 255);
-    font-family: Rubik,sans-serif;
-    font-size: 1.25rem;
-    font-weight: 500;
+    ${font({Fmax: 20, Fmin: 20, family: 'Rubik,sans-serif', weight: 500, color: 'rgb(255, 255, 255)'})};
     line-height: 1.25rem;
     letter-spacing: 0;
-    text-align: left;
     text-transform: uppercase;
     cursor: pointer;
+    max-width: 280px;
+    width: 100%;
+    @media (max-width: 800px) {
+        max-width: 90%;
+        margin: 4px 20px 20px;
+    }
 `
 export const Warning = styled.p`
-    ${font({Fmax: 18, Fmin: 14, weight: 400, lineHeight:1.3, })}
+    ${font({Fmax: 18, Fmin: 14, weight: 400, lineHeight:1.3, color: 'rgb(129, 135, 152)'})}
     margin-top: 30px;
     margin-bottom: 88px;
-    color: rgb(129, 135, 152);
-    font-family: PT Root UI, sans-serif;
-    font-size: 0.88rem;
-    font-weight: 400;
-    line-height: 130%;
     letter-spacing: 0;
     text-align: left;
+    @media (max-width: 500px) {
+        display: none;
+    }
 `

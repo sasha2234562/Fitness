@@ -1,7 +1,7 @@
 import * as SC from './Modal.style';
 import {FC} from "react";
 import {RootState} from "@/lib/store";
-import {InitialState} from "@/lib/slice";
+import {Interface} from "@/lib/slice";
 import {useSelector} from "react-redux";
 import {ModalProps} from "@/Components/Modal/Modal.type";
 import close from '../../assets/images/close.svg';
@@ -13,13 +13,13 @@ export const discount: { [key: number]: string } = {
     1: '-50%',
     2: '-60%'
 };
-export const priceOld: { [key: number]: string } = {
-    0: '990',
-    1: '1690',
-    2: '5990'
-};
 const Modal: FC<ModalProps> = ({exit}) => {
-    const data = useSelector<RootState, InitialState[]>(state => state.slice)
+    const price = useSelector<RootState, Interface[]>(state => state.slice.isPopupContent);
+    const isContent = useSelector<RootState, Interface[]>(state => state.slice.isContent);
+    const cena = isContent.filter((i) => {
+        return i.price === 999 && !i.isPopular || i.price === 1690 && !i.isPopular || i.price === 5990 && !i.isPopular;
+    })
+
     return (
         <SC.Window>
             <SC.Container>
@@ -32,9 +32,10 @@ const Modal: FC<ModalProps> = ({exit}) => {
                 </div>
                 <SC.Look>Посмотри, что мы для тебя приготовили 🔥</SC.Look>
                 <SC.PriceContainer>
-                    {data.map((item, index) => {
+                    {price.map((item, index) => {
                         return item.isDiscount &&
-                            <SharesModal priceOld={[990, 1690, 5990][0]} price={item.price} name={item.name}
+                            <SharesModal key={index} priceOld={cena[index].price} price={item.price}
+                                         name={item.name}
                                          discont={discount[index]}/>
                     })}
                 </SC.PriceContainer>

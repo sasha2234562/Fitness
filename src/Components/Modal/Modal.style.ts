@@ -20,6 +20,9 @@ export const Container = styled.div`
     display: flex;
     flex-direction: column;
     gap: 40px;
+    @media (max-width: 600px) {
+        //width: 100%;
+    }
 `
 export const Title = styled.h2`
     ${font({Fmax: 30, Fmin: 24, lineHeight: 1.3, family:"Rubik, sans-serif"})}
@@ -42,6 +45,11 @@ export const Discount = styled.p`
     ${font({Fmax: 24, Fmin: 15, lineHeight: 1.3})};
     letter-spacing: 0;
     text-align: left;
+    padding: 1rem 28px;
+    box-sizing: border-box;
+    border: 1.5px solid rgb(1, 185, 197);
+    border-radius: 30px;
+
     span{
         color: rgb(1, 185, 197);
     }
@@ -55,6 +63,9 @@ export const PriceContainer = styled.div`
     display: flex;
     width: 100%;
     gap: 20px;
+    @media (max-width: 600px) {
+        flex-direction: column;
+    }
 `
 export const Close = styled.img`
     width: 1.5rem;

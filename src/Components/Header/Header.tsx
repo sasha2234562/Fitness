@@ -12,7 +12,7 @@ const Header = () => {
         <SC.Header>
             <SC.Title>Скидка действует:</SC.Title>
                 <CountDown openWindow={openWindow} minutes={0} seconds={10}/>
-            {open && <Modal exit={exit}/>}
+            {!open && <Modal exit={exit}/>}
         </SC.Header>
     );
 };

@@ -16,7 +16,7 @@ export const Radio = styled.input`
     padding: 3px;
     background-color: yellow;
 `
-export const Data = styled.span`
+export const Name = styled.span`
     ${font({Fmax:26, Fmin: 24, lineHeight: 1.0,weight: 400, family: 'Bebas Neue Cyrillic, sans-serif'})};
     letter-spacing: 0;
     text-align: left;
