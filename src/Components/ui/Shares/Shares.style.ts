@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {font} from "../../../common.ts";
+import {font} from "@/common";
 
 export const Container = styled.div`
     padding: 0 27px 0 31px;

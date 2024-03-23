@@ -1,4 +1,4 @@
-import * as SC from './Forever.style.ts';
+import * as SC from './Forever.style';
 import star from '../../../assets/images/star.svg';
 
 const Forever = () => {

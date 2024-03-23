@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {font} from "../../../common.ts";
+import {font} from "@/common";
 
 export const PriceWrapper = styled.div`
     display: flex;

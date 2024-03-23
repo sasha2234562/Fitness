@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import {font} from "../../common.ts";
+import {font} from "@/common";
 
 export const Window = styled.div`
     background-color: rgba(0, 0, 0, 0.4);

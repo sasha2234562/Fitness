@@ -1,4 +1,4 @@
-import * as SC from './Title.style.ts'
+import * as SC from './Title.style'
 
 const Title = () => {
     return (
