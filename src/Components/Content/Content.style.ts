@@ -81,9 +81,9 @@ export const CheckboxLabel  =styled.p`
     ${font({Fmax: 16, Fmin:16, weight: 400, lineHeight: 1.1})}
     letter-spacing: 0;
     text-align: left;
-    span{
-        color: rgb(45, 151, 249);
-    }
+`
+export const Link = styled.a`
+    color: rgb(45, 151, 249);
 `
 export const BuyButton = styled.button`
     padding: 1.75rem 0;

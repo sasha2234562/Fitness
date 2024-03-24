@@ -27,7 +27,7 @@ const Content = () => {
             <SC.SharesWrapper>
                 {data.map((i, index) => {
                     return i.isPopular && i.name !== 'навсегда' &&
-                        <Shares id={i.id}  price={!timeOut ? i.price : discountPrice[index].price} name={i.name}
+                        <Shares id={i.id} price={!timeOut ? i.price : discountPrice[index].price} name={i.name}
                                 discountPrice={discountPrice[index].price} discount={discount[index]}/>
                 })}
             </SC.SharesWrapper>
@@ -44,8 +44,9 @@ const Content = () => {
     </svg>
   </span>
                 </label>
-                <SC.CheckboxLabel>Я соглашаюсь с <span>Правилами сервиса</span> и
-                    условиями <span>Публичной оферты.</span></SC.CheckboxLabel>
+                <SC.CheckboxLabel>Я соглашаюсь с <SC.Link href={'https://srg.adrenalin-fitness.by/pravila-kluba.html'}>Правилами
+                    сервиса</SC.Link> и
+                    условиями <SC.Link href={'https://bgd.adrenalin-fitness.by/oferta.html'}>Публичной оферты.</SC.Link></SC.CheckboxLabel>
             </SC.CheckboxContainer>
             <SC.BuyButton>Купить</SC.BuyButton>
             <SC.Warning>Нажимая «Купить», Пользователь соглашается на автоматическое списание денежных средств по
