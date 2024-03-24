@@ -1,6 +1,6 @@
 import {combineReducers, configureStore} from '@reduxjs/toolkit';
-import {dataSlice} from "./slices/slice";
-import {activeShares} from "@/lib/slices/activeSharesSlice";
+import {dataSlice} from "@/components/lib/slices/getInfoSlice";
+import {activeShares} from "@/components/lib/slices/activeSharesSlice";
 
 const rootReducer = combineReducers({
     slice: dataSlice,

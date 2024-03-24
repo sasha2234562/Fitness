@@ -1,9 +1,9 @@
 import * as SC from './Header.style';
-import CountDown from "@/Components/ui/CountDown/CountDown";
-import Modal from "@/Components/Modal/Modal";
+import Modal from "@/app/Modal/Modal";
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "@/lib/store";
-import {closePopup, openPopup, timeOut} from "@/lib/slices/activeSharesSlice";
+import {AppDispatch, RootState} from "@/components/lib/store";
+import {closePopup, openPopup, timeOut} from "@/components/lib/slices/activeSharesSlice";
+import CountDown from "@/components/ui/CountDown/CountDown";
 
 const Header = () => {
     const dispatch = useDispatch<AppDispatch>()

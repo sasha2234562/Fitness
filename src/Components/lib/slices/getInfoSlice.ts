@@ -38,7 +38,7 @@ const initialState: InitialState = {
     isContent: [],
     isPopupContent: []
 }
-const slice = createSlice({
+const getInfoSlice = createSlice({
     initialState,
     name: 'Slice',
     reducers: {},
@@ -50,4 +50,4 @@ const slice = createSlice({
     }
 });
 
-export const dataSlice = slice.reducer;
+export const dataSlice = getInfoSlice.reducer;

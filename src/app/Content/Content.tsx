@@ -1,12 +1,12 @@
 import * as SC from './Content.style'
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "@/lib/store";
-import {get, Interface} from '@/lib/slices/slice';
-import Forever from "@/Components/ui/Forever/Forever";
-import Shares from "@/Components/ui/Shares/Shares";
+import {AppDispatch, RootState} from "@/components/lib/store";
+import {get, Interface} from '@/components/lib/slices/getInfoSlice';
+import Shares from "@/components/ui/Shares/Shares";
+import Forever from "@/components/ui/Forever/Forever";
 
-export const discount: { [key: number]: string } = {
+const discount: { [key: number]: string } = {
     0: '-30%',
     1: '-40%',
     2: '-50%'

@@ -5,3 +5,6 @@ export interface SharesModalProps {
     priceOld: number
     id: string
 }
+export interface ContainerProps{
+    active: boolean
+}

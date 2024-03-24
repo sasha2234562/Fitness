@@ -1,4 +1,4 @@
-import * as SC from './OfferPromotion.style'
+import * as SC from "@/components/ui/OfferPromotion/OfferPromotion.style";
 
 export const OfferPromotion = () => {
     return  <SC.Container> горящее предложение </SC.Container>;

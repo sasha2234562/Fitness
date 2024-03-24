@@ -1,8 +1,8 @@
 import './App.css';
-import Header from "@/Components/Header/Header";
-import Title from './Components/Title/Title';
-import Men from "@/Components/Men/Men";
-import Content from "@/Components/Content/Content";
+import Header from "@/app/Header/Header";
+import Title from '@/app/Title/Title';
+import Men from "@/app/Men/Men";
+import Content from "@/app/Content/Content";
 function App() {
 
     return (

@@ -1,9 +1,9 @@
 import * as SC from './SharesModal.style'
 import {FC} from "react";
-import {SharesModalProps} from "@/Components/Modal/SharesModal/SharesModal.type";
+import {SharesModalProps} from "@/app/Modal/SharesModal/SharesModal.type";
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "@/lib/store";
-import {setActive} from '@/lib/slices/activeSharesSlice';
+import {AppDispatch, RootState} from "@/components/lib/store";
+import {setActive} from '@/components/lib/slices/activeSharesSlice';
 import star from "@/assets/images/star.svg";
 
 const SharesModal: FC<SharesModalProps> = ({price, discount, id, priceOld, name}) => {

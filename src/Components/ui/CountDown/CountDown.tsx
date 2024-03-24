@@ -1,13 +1,8 @@
 import {FC, memo, useCallback, useEffect, useState} from "react";
-import * as SC from './CountDown.style'
 import points from '../../../assets/images/points.svg'
 import pointsBlue from '../../../assets/images/pointsBlue.svg'
-
-export interface CountDownProps {
-    minutes: number
-    seconds: number
-    openWindow: () => void
-}
+import {CountDownProps} from "@/components/ui/CountDown/CountDown.type";
+import * as SC from "@/components/ui/CountDown/CountDown.style";
 
 const CountDown: FC<CountDownProps> = memo(({minutes, seconds, openWindow}) => {
     const [[m, s], setTime] = useState([minutes, seconds]);

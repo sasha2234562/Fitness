@@ -1,9 +1,7 @@
 import styled from "styled-components";
 import {font} from "@/common";
+import {ContainerProps} from "./SharesModal.type";
 
-export interface ContainerProps{
-    active: boolean
-}
 
 export const PriceWrapper = styled.div<ContainerProps>`
     display: flex;
@@ -33,19 +31,19 @@ export const PriceWrapper = styled.div<ContainerProps>`
         flex-direction: column;
         align-items: flex-start;
     }
-    .radio input { display: none; /* Прячем исходный переключатель */ }
+    .radio input { display: none; }
     .radio span {
-        position: relative; /* Относительное позиционирование */
-        display: inline-block; /* Строчно-блочный элемент */
-        width: 20px; height: 20px; /* Размеры */
-        background: #fff; /* Серый цвет фона */
-        border-radius: 50%; /* Круглый переключатель */
+        position: relative; 
+        display: inline-block; 
+        width: 20px; height: 20px;
+        background: #fff; 
+        border-radius: 50%; 
         border: 2px solid rgb(85, 89, 101);
     }
     .radio input:checked + span {
-        background: #fff; /* Красный цвет фона */
+        background: #fff; 
     }
-    /* Добавляем белую точку по центру */
+  
     .radio input:checked + span::before {
         content: '';
         position: absolute;

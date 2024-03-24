@@ -1,9 +1,9 @@
-import * as SC from './Forever.style';
 import star from '../../../assets/images/star.svg';
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "@/lib/store";
-import {Interface} from "@/lib/slices/slice";
-import {setActive} from "@/lib/slices/activeSharesSlice";
+import {AppDispatch, RootState} from "@/components/lib/store";
+import {Interface} from "@/components/lib/slices/getInfoSlice";
+import {setActive} from "@/components/lib/slices/activeSharesSlice";
+import * as SC from "@/components/ui/Forever/Forever.style";
 
 const Forever = () => {
     const timeOut = useSelector<RootState, boolean>(state => state.activeShares.timeOut);

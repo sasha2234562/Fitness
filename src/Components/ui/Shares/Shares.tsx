@@ -1,10 +1,10 @@
-import * as SC from './Shares.style'
 import star from '../../../assets/images/star.svg'
 import {FC} from "react";
-import {SharesProps} from './Shares.type';
 import {useDispatch, useSelector} from "react-redux";
-import {AppDispatch, RootState} from "@/lib/store";
-import {setActive} from "@/lib/slices/activeSharesSlice";
+import {AppDispatch, RootState} from "@/components/lib/store";
+import {setActive} from "@/components/lib/slices/activeSharesSlice";
+import {SharesProps} from "@/components/ui/Shares/Shares.type";
+import * as SC  from "@/components/ui/Shares/Shares.style";
 
 const Shares: FC<SharesProps> = ({price, discount, id, discountPrice, name}) => {
     const dispatch = useDispatch<AppDispatch>()

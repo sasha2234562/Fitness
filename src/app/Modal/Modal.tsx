@@ -1,14 +1,14 @@
 import * as SC from './Modal.style';
 import {FC} from "react";
-import {RootState} from "@/lib/store";
-import {Interface} from "@/lib/slices/slice";
+import {RootState} from "@/components/lib/store";
+import {Interface} from "@/components/lib/slices/getInfoSlice";
 import {useSelector} from "react-redux";
-import {ModalProps} from "@/Components/Modal/Modal.type";
+import {ModalProps} from "@/app/Modal/Modal.type";
 import close from '../../assets/images/close.svg';
-import SharesModal from "@/Components/Modal/SharesModal/SharesModal";
-import OfferPromotion from "@/Components/ui/OfferPromotion/OfferPromotion";
+import SharesModal from "@/app/Modal/SharesModal/SharesModal";
+import OfferPromotion from "@/components/ui/OfferPromotion/OfferPromotion";
 
-export const discount: { [key: number]: string } = {
+const discount: { [key: number]: string } = {
     0: '-40%',
     1: '-50%',
     2: '-60%'
