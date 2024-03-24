@@ -3,4 +3,5 @@ export interface SharesModalProps {
     discont: string
     price: number
     priceOld: number
+    id: string
 }

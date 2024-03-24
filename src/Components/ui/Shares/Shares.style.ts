@@ -1,12 +1,15 @@
 import styled from "styled-components";
 import {font} from "@/common";
+export interface ContainerProps{
+    active: boolean
+}
 
-export const Container = styled.div`
+export const Container = styled.div<ContainerProps>`
     padding: 0 27px 0 31px;
     gap: 20px;
-    border: 2px solid rgb(211, 214, 221);
+    border: 2px solid ${(props=> props.active ? 'rgb(1, 185, 197)' : 'rgb(211, 214, 221)')};
     border-radius: 20px;
-    background: rgb(255, 255, 255);
+    background: ${(props=> props.active ? 'rgba(1, 185, 197, 0.05)' : 'rgb(255, 255, 255)')};
     width: 100%;
     max-height: 261px;
     display: flex;
@@ -36,7 +39,6 @@ export const Discount = styled.span`
     position: absolute;
     right: 18px;
     top: -4px;
-
 `
 export const Name= styled.span`
     ${font({Fmin:24, Fmax:30, lineHeight: 1.0, family: 'Bebas Neue Cyrillic, sans-serif', color: 'rgb(104, 112, 120)', weight: 400})};

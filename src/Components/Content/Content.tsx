@@ -2,7 +2,7 @@ import * as SC from './Content.style'
 import {useEffect} from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {AppDispatch, RootState} from "@/lib/store";
-import {get, Interface} from '@/lib/slice';
+import {get, Interface} from '@/lib/slices/slice';
 import Forever from "@/Components/ui/Forever/Forever";
 import Shares from "@/Components/ui/Shares/Shares";
 
@@ -19,13 +19,14 @@ const Content = () => {
     useEffect(() => {
         dispatch(get());
     }, []);
+
     return (
         <SC.Container>
             <SC.SharesWrapper>
                 {data.map((i, index) => {
-                    console.log(i)
                     return i.isPopular && i.name !== 'навсегда' &&
-                        <Shares price={i.price} name={i.name} discountPrice={discountPrice[index].price} discount={discount[index]}/>
+                        <Shares id={i.id}  price={i.price} name={i.name}
+                                discountPrice={discountPrice[index].price} discount={discount[index]}/>
                 })}
             </SC.SharesWrapper>
             <Forever/>

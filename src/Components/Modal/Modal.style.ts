@@ -19,9 +19,12 @@ export const Container = styled.div`
     padding: 61px 40px 40px;
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 40px;
-    @media (max-width: 600px) {
-        //width: 100%;
+    @media (max-width: 930px) {
+        top: 41%;
+        width: 80%;
+        padding: 61px 20px 40px;
     }
 `
 export const Title = styled.h2`
@@ -63,7 +66,7 @@ export const PriceContainer = styled.div`
     display: flex;
     width: 100%;
     gap: 20px;
-    @media (max-width: 600px) {
+    @media (max-width: 930px) {
         flex-direction: column;
     }
 `
@@ -85,7 +88,7 @@ export const ButtonStart = styled.button`
     padding: 20px 0 22px 0;
     background: rgb(253, 77, 53);
     ${font({Fmax: 20, color: 'rgb(255, 255, 255)', weight: 500, Fmin: 20 ,family: 'Rubik, sans-serif'})};
-    letter-spacing: 0px;
+    letter-spacing: 0;
     text-align: left;
     width: 100%;
 `

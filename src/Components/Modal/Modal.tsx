@@ -1,7 +1,7 @@
 import * as SC from './Modal.style';
 import {FC} from "react";
 import {RootState} from "@/lib/store";
-import {Interface} from "@/lib/slice";
+import {Interface} from "@/lib/slices/slice";
 import {useSelector} from "react-redux";
 import {ModalProps} from "@/Components/Modal/Modal.type";
 import close from '../../assets/images/close.svg';
@@ -36,6 +36,7 @@ const Modal: FC<ModalProps> = ({exit}) => {
                         return item.isDiscount &&
                             <SharesModal key={index} priceOld={cena[index].price} price={item.price}
                                          name={item.name}
+                                         id={item.id}
                                          discont={discount[index]}/>
                     })}
                 </SC.PriceContainer>

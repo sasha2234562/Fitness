@@ -1,13 +1,17 @@
 import styled from "styled-components";
 import {font} from "@/common";
 
-export const Container = styled.div`
+export interface ContainerProps{
+    active: boolean
+}
+
+export const Container = styled.div<ContainerProps>`
     display: flex;
     align-items: center;
     min-height: 5.47rem;
-    border: 2px solid rgb(211, 214, 221);
+    border: 2px solid ${(props=> props.active ? 'rgb(1, 185, 197)' : 'rgb(211, 214, 221)')};
     border-radius: 1.25rem;
-    background: rgb(255, 255, 255);
+    background: ${(props=> props.active ? 'rgba(1, 185, 197, 0.05)' : 'rgb(255, 255, 255)')};
     padding: 23px 31px 14px 52px;
     gap: 42px;
     margin: 40px 0 12px 0;
@@ -36,6 +40,13 @@ export const Star = styled.img`
     @media (max-width: 800px) {
         top: -14%;
     }
+`
+export const Discount = styled.span`
+    ${font({Fmax: 18, Fmin: 13, weight: 500, color: 'rgb(255, 255, 255)', lineHeight: 1.3})};
+    letter-spacing: 0;
+    position: absolute;
+    right: 18px;
+    top: -4px;
 `
 export const Wrapper = styled.div`
     gap: 22px; 

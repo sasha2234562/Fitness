@@ -3,4 +3,5 @@ export interface SharesProps {
     name: string
     price: number
     discountPrice: number
+    id: string
 }
