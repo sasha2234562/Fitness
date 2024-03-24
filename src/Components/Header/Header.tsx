@@ -17,7 +17,7 @@ const Header = () => {
     return (
         <SC.Header>
             <SC.Title>Скидка действует:</SC.Title>
-                <CountDown openWindow={openWindow} minutes={0} seconds={5}/>
+                <CountDown openWindow={openWindow} minutes={2} seconds={30}/>
             {popup && <Modal exit={exit}/>}
         </SC.Header>
     );
