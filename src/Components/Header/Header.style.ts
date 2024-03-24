@@ -3,7 +3,7 @@ import {font} from "@/common";
 
 export const Header = styled.div`
     background-color: #ffffff;
-    height: 76px;
+    height: fit-content;
     display: flex;
     align-items: center;
     justify-content: center;

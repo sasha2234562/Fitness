@@ -1,18 +1,24 @@
 import * as SC from './Header.style';
-import {useState} from "react";
 import CountDown from "@/Components/ui/CountDown/CountDown";
 import Modal from "@/Components/Modal/Modal";
+import {useDispatch, useSelector} from "react-redux";
+import {AppDispatch, RootState} from "@/lib/store";
+import {closePopup, openPopup, timeOut} from "@/lib/slices/activeSharesSlice";
 
 const Header = () => {
-    const [open, setOpen] = useState(false)
-    const exit = () => setOpen(false)
-    const openWindow = () => setOpen(false)
+    const dispatch = useDispatch<AppDispatch>()
+    const popup = useSelector<RootState, boolean>(state => state.activeShares.openPopup)
+    const exit = () => dispatch(closePopup())
+    const openWindow = () => {
+        dispatch(openPopup())
+        dispatch(timeOut())
+    }
 
     return (
         <SC.Header>
             <SC.Title>Скидка действует:</SC.Title>
-                <CountDown openWindow={openWindow} minutes={0} seconds={10}/>
-            {!open && <Modal exit={exit}/>}
+                <CountDown openWindow={openWindow} minutes={0} seconds={5}/>
+            {popup && <Modal exit={exit}/>}
         </SC.Header>
     );
 };

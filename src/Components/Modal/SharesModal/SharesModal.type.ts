@@ -1,6 +1,6 @@
 export interface SharesModalProps {
     name: string
-    discont: string
+    discount: string
     price: number
     priceOld: number
     id: string

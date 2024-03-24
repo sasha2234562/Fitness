@@ -6,6 +6,7 @@ import {Interface} from "@/lib/slices/slice";
 import {setActive} from "@/lib/slices/activeSharesSlice";
 
 const Forever = () => {
+    const timeOut = useSelector<RootState, boolean>(state => state.activeShares.timeOut);
     const data = useSelector<RootState, Interface[]>(state => state.slice.isContent);
     const dispatch = useDispatch<AppDispatch>()
     const activeShares = useSelector<RootState, string>(state => state.activeShares.active);
@@ -20,17 +21,27 @@ const Forever = () => {
     return (
         <SC.Container onClick={onClickActive}
                       active={popularForeverItem ? popularForeverItem.id === activeShares : false}>
-            <SC.Star src={star} alt="star"/>
-            <SC.Discount>-70%</SC.Discount>
+            {!timeOut && <><SC.Star src={star} alt="star"/>
+                <SC.Discount>-70%</SC.Discount>
+            </>}
             <SC.Wrapper>
                 <SC.Title>Навсегда</SC.Title>
                 <SC.PriceContainer>
                     {data.map(i => {
-                        if (i.isPopular && i.name === 'навсегда') {
-                            return <SC.Price key={i.id}>{i.price}₽</SC.Price>
+                        if (i.name === 'навсегда') {
+                            if (!timeOut) {
+                                if (i.isPopular) {
+                                    return <SC.Price key={i.id}>{i.price}₽</SC.Price>;
+                                }
+                            } else {
+                                if (!i.isPopular) {
+                                    return <SC.Price key={i.id}>{i.price}₽</SC.Price>;
+                                }
+                            }
                         }
+                        return null;
                     })}
-                    {data.map(i => {
+                    {!timeOut && data.map(i => {
                         return !i.isPopular && i.name === 'навсегда' && <>
                             <SC.DiscountPrice key={i.id}>{i.price}₽</SC.DiscountPrice>
                         </>

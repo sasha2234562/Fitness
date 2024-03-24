@@ -13,9 +13,11 @@ export const discount: { [key: number]: string } = {
 };
 const Content = () => {
     const data = useSelector<RootState, Interface[]>(state => state.slice.isContent);
-    const discountPrice = useSelector<RootState, Interface[]>(state => state.slice.isPopupContent);
+    const timeOut = useSelector<RootState, boolean>(state => state.activeShares.timeOut);
+    const discountPrice = data.filter((i) => {
+        return i.price === 999 && !i.isPopular || i.price === 1690 && !i.isPopular || i.price === 5990 && !i.isPopular;
+    })
     const dispatch = useDispatch<AppDispatch>();
-
     useEffect(() => {
         dispatch(get());
     }, []);
@@ -25,7 +27,7 @@ const Content = () => {
             <SC.SharesWrapper>
                 {data.map((i, index) => {
                     return i.isPopular && i.name !== 'навсегда' &&
-                        <Shares id={i.id}  price={i.price} name={i.name}
+                        <Shares id={i.id}  price={!timeOut ? i.price : discountPrice[index].price} name={i.name}
                                 discountPrice={discountPrice[index].price} discount={discount[index]}/>
                 })}
             </SC.SharesWrapper>

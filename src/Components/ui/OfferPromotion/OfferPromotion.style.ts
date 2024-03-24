@@ -18,4 +18,8 @@ export const Container = styled.div`
     line-height: 130%;
     letter-spacing: 2%;
     text-align: left;
+    @media (max-width: 400px) {
+        left: 0;
+        
+    }
 `

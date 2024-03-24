@@ -37,7 +37,7 @@ const Modal: FC<ModalProps> = ({exit}) => {
                             <SharesModal key={index} priceOld={cena[index].price} price={item.price}
                                          name={item.name}
                                          id={item.id}
-                                         discont={discount[index]}/>
+                                         discount={discount[index]}/>
                     })}
                 </SC.PriceContainer>
                 <SC.ButtonStart>Начать тренироваться</SC.ButtonStart>

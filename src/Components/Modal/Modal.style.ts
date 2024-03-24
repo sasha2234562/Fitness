@@ -22,9 +22,7 @@ export const Container = styled.div`
     align-items: center;
     gap: 40px;
     @media (max-width: 930px) {
-        top: 41%;
-        width: 80%;
-        padding: 61px 20px 40px;
+        width: 70%;
     }
 `
 export const Title = styled.h2`
@@ -67,6 +65,7 @@ export const PriceContainer = styled.div`
     width: 100%;
     gap: 20px;
     @media (max-width: 930px) {
+        margin-right: 2rem;
         flex-direction: column;
     }
 `
@@ -91,4 +90,5 @@ export const ButtonStart = styled.button`
     letter-spacing: 0;
     text-align: left;
     width: 100%;
+    max-width: 310px;
 `
